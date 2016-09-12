@@ -9,4 +9,5 @@
                  [environ "1.1.0"]]
   :main ^:skip-aot cljbuild.core
   :target-path "target/%s"
+  :uberjar-name "cljbuild.jar"
   :profiles {:uberjar {:aot :all}})
