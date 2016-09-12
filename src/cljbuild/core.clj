@@ -5,7 +5,7 @@
   (:gen-class))
 
 (defn make-handler []
-  (-> (fn [req] (response/response "Hello World!"))))
+  (-> (fn [req] (response/response "Hello World From Wildfly!"))))
 
 (defn -main [& args]
   (println "Starting server...")

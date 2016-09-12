@@ -8,6 +8,7 @@
                  [ring "1.5.0"]
                  [environ "1.1.0"]]
   :main ^:skip-aot cljbuild.core
-  :target-path "target/%s"
   :uberjar-name "cljbuild.jar"
-  :profiles {:uberjar {:aot :all}})
+  :profiles {:dev {:plugins [[lein-immutant "2.1.0"]]}
+             :uberjar {:aot :all
+                       :omit-source true}})

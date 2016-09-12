@@ -7,12 +7,11 @@ cache:
   directories:
     - "$HOME/.m2"
 
+env:
+  - secure: "oWRUnsCIs6AX/o2d1bngnmq/IpFL2mHs97vqswIONi+WGRk8eIHf4d2TwZDsky2qycehknDkvDeF61BP5I25iaG+vZejEopNvhWLGCwtVryF2ObRcN3c4nsnQw+Zdvt86C3Vo2mY2HwlyPwBS4+7KjlwX5bD/e0Tk0eW/UCWxXld7WJhvext0O3U4xPZofi25tI5QhO/k56hdjaZRX2eyXdcSxPiphx+aN0E/qUjSKEPBnk1HZ+q62kM3AS/OwjdNQLranPjoSxJpd55TM2MFg0VetueBBBV1JfHGcZJFqidDvWzr76vluHTSgOmSRD/irHrm5AdYokKGuOvnFMO5VvI+pSWmrbm1eVEetni98c+Ee+/k2tM1O2y0JrP5TjEqqlhgemi4IXLELN4pjYy02ovfFCzGAz9gvLiODJtqYgq8gz2/We7zli+p6WOMQykxv49kzC8LdWX/U0mBuT3LxN74adCjUL1PCL+aoPjOetr98ArokwnV5v5iUQsnJLavImfTsGH/7MdJM6wtGi1Du10JdyidAnqcPyQLvXVywUoroXLyFXlL44zUpS6b+amlo8JA6/1QYaubSOhu5RqO9fEQ8hNE+IYhF4GYvUE3u6k7Tnq/N94c360QL6GrY5LjFzNBS/71ckwKx7jptq0kTCjA8fzOGSza32itp3OZfI="
+
 deploy:
-  provider: openshift
-  user: saeidscorp@yahoo.com
-  password:
-    secure: i0XipThdy5ExXOYvZbkcpYiGUvcYRFxw2iDMMN5AkqNUH5oZdEE7BjAZSK6STqw4IvwsBSyQ2IGAb1lKK5GMWCZjsQjMroxtfmFP0KDuS3CGXLQdCOp1oXURoo9crjw3dHH31xdF3dql1+MQJjNDeOVyJCVNXxBcJSNGAeyT1fw5lqXE4JyRA3EzLY8QVFHxqQuk+3BR7arjUeZJAzQYVxpZzHKAMviHe7MgYt1tF0Ysyj55e3JRFqmDgXIMEBZDJ5yG8CYgSjoFcmFZ4EENGVsdjC4ZCvYiKiv2R1WgpuzcaUdJbwk09Z+Te3PF4wuhKJVhhigUeHMptV0nUDBnMN5JZrRiCyKuKFU8AsQfnLIIlAASd08byKkssGpr04fE3Fn7XWDRQddw4HWZIdYIJBhuj05gggTBcI4uDCSuCj3fmgwhWrw4YxHg+EIrTvAyVKyyCjugSeoTAg2fHYkhshK08HH/81TaUdwlqxskkfW7whOevuiPu+c1pswwkiiLynNT4Zz0BP7dWmJSZIIKF06daiz9lWaAQiaJnJeIGkm5Z7Ad+UvUYZj/No/T66BIDDlqGnDFTctHDRfPZxuY/1lS0w6G4CXFckO8zQq9cu/T2pvTk84Rbn50SA0Y+MTkbp2fJMbf9fqFpJlMxMG+4RqHHk59PBXUJ57XB4fy2+Q=
-  app: cljbuild
-  domain: scorpone
+  provider: script
+  script: scripts/deploy.sh
   on:
-    repo: saeidscorp/cljbuild
+    branch: master
