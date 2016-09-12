@@ -13,3 +13,5 @@ gem install rhc
 
 echo Uploading deployment
 rhc -l saeidscorp@yahoo.com -p $OPENSHIFT_PASSWORD scp -a wildfly upload target/ROOT.war wildfly/standalone/deployments/
+
+# rm the ROOT.war.failed file on server to cause re-deployment
