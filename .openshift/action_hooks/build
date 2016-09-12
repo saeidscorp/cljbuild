@@ -4,5 +4,5 @@ source ${OPENSHIFT_REPO_DIR}/.openshift/.leinrc
 
 cd ${OPENSHIFT_REPO_DIR}
 
-echo Making UberJar
+echo Making UberJar...
 nohup ${OPENSHIFT_DATA_DIR}/lein do clean, uberjar
