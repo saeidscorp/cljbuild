@@ -5,6 +5,9 @@ lein immutant war
 
 mv target/cljbuild.war target/ROOT.war
 
+echo -- Running with Ruby:
+ruby -v
+
 echo Installing RHC command-line tools
 gem install rhc
 
