@@ -1,0 +1,18 @@
+language: clojure
+
+jdk:
+  - oraclejdk8
+
+cache:
+  directories:
+    - "$HOME/.m2"
+
+deploy:
+  provider: openshift
+  user: saeidscorp@yahoo.com
+  password:
+    secure: i0XipThdy5ExXOYvZbkcpYiGUvcYRFxw2iDMMN5AkqNUH5oZdEE7BjAZSK6STqw4IvwsBSyQ2IGAb1lKK5GMWCZjsQjMroxtfmFP0KDuS3CGXLQdCOp1oXURoo9crjw3dHH31xdF3dql1+MQJjNDeOVyJCVNXxBcJSNGAeyT1fw5lqXE4JyRA3EzLY8QVFHxqQuk+3BR7arjUeZJAzQYVxpZzHKAMviHe7MgYt1tF0Ysyj55e3JRFqmDgXIMEBZDJ5yG8CYgSjoFcmFZ4EENGVsdjC4ZCvYiKiv2R1WgpuzcaUdJbwk09Z+Te3PF4wuhKJVhhigUeHMptV0nUDBnMN5JZrRiCyKuKFU8AsQfnLIIlAASd08byKkssGpr04fE3Fn7XWDRQddw4HWZIdYIJBhuj05gggTBcI4uDCSuCj3fmgwhWrw4YxHg+EIrTvAyVKyyCjugSeoTAg2fHYkhshK08HH/81TaUdwlqxskkfW7whOevuiPu+c1pswwkiiLynNT4Zz0BP7dWmJSZIIKF06daiz9lWaAQiaJnJeIGkm5Z7Ad+UvUYZj/No/T66BIDDlqGnDFTctHDRfPZxuY/1lS0w6G4CXFckO8zQq9cu/T2pvTk84Rbn50SA0Y+MTkbp2fJMbf9fqFpJlMxMG+4RqHHk59PBXUJ57XB4fy2+Q=
+  app: cljbuild
+  domain: scorpone
+  on:
+    repo: saeidscorp/cljbuild
