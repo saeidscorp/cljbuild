@@ -24,4 +24,4 @@ NAVE="SHELL=/bin/bash HOME=$OPENSHIFT_DATA_DIR $NAVE_SCRIPT"
 eval $NAVE use $NODE_VER npm install bower
 
 echo Validating NodeJs Version:
-eval $NAVE use $NODE_VER nodejs -v
+eval $NAVE use $NODE_VER node -v
