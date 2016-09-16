@@ -6,9 +6,19 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.immutant/web "2.1.5"]
                  [ring "1.5.0"]
-                 [environ "1.1.0"]]
+                 [environ "1.1.0"]
+                 [org.clojars.saeidscorp/optimus "0.19.0-SNAPSHOT"]
+                 [selmer "1.0.7"]]
+  ;:bower-dependencies [[jquery "^3.1.0"]]
+  ;:bower {:directory "dev-resources/libs/components"}
   :main ^:skip-aot cljbuild.core
   :uberjar-name "cljbuild.jar"
-  :profiles {:dev {:plugins [[lein-immutant "2.1.0"]]}
+
+  :env {:dev {:optimus-js-engine "nashorn"}}
+
+  :profiles {:dev {:plugins [[lein-immutant "2.1.0"]
+                             [lein-environ "1.1.0"]
+                             ;[lein-bower "0.5.1"]
+                             ]}
              :uberjar {:aot :all
                        :omit-source true}})

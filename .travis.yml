@@ -1,8 +1,8 @@
 language: clojure
 
 before_install:
-  - rvm install 2.3.1
-  - rvm use 2.3.1 --default
+  - npm install bower
+  - cd dev-resources/libs && bower install
 
 jdk:
   - oraclejdk8
@@ -10,12 +10,3 @@ jdk:
 cache:
   directories:
     - "$HOME/.m2"
-
-env:
-  - secure: "oWRUnsCIs6AX/o2d1bngnmq/IpFL2mHs97vqswIONi+WGRk8eIHf4d2TwZDsky2qycehknDkvDeF61BP5I25iaG+vZejEopNvhWLGCwtVryF2ObRcN3c4nsnQw+Zdvt86C3Vo2mY2HwlyPwBS4+7KjlwX5bD/e0Tk0eW/UCWxXld7WJhvext0O3U4xPZofi25tI5QhO/k56hdjaZRX2eyXdcSxPiphx+aN0E/qUjSKEPBnk1HZ+q62kM3AS/OwjdNQLranPjoSxJpd55TM2MFg0VetueBBBV1JfHGcZJFqidDvWzr76vluHTSgOmSRD/irHrm5AdYokKGuOvnFMO5VvI+pSWmrbm1eVEetni98c+Ee+/k2tM1O2y0JrP5TjEqqlhgemi4IXLELN4pjYy02ovfFCzGAz9gvLiODJtqYgq8gz2/We7zli+p6WOMQykxv49kzC8LdWX/U0mBuT3LxN74adCjUL1PCL+aoPjOetr98ArokwnV5v5iUQsnJLavImfTsGH/7MdJM6wtGi1Du10JdyidAnqcPyQLvXVywUoroXLyFXlL44zUpS6b+amlo8JA6/1QYaubSOhu5RqO9fEQ8hNE+IYhF4GYvUE3u6k7Tnq/N94c360QL6GrY5LjFzNBS/71ckwKx7jptq0kTCjA8fzOGSza32itp3OZfI="
-
-deploy:
-  provider: script
-  script: scripts/deploy.sh
-  on:
-    branch: master

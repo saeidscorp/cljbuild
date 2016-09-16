@@ -1,8 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-source ${OPENSHIFT_REPO_DIR}/.openshift/.leinrc
+cd ${OPENSHIFT_REPO_DIR}dev-resources/libs
 
-cd ${OPENSHIFT_REPO_DIR}
-
-echo Making UberJar...
-nohup ${OPENSHIFT_DATA_DIR}/lein do clean, uberjar
+echo Downloading bower dependencies
+HOME=$OPENSHIFT_DATA_DIR ../node_modules/.bin/bower install

@@ -1,0 +1,23 @@
+{
+  "name": "libs",
+  "homepage": "",
+  "authors": [
+    "Saeid Akbari <saeidscorp@yahoo.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "semantic": "^2.2.4",
+    "font-awesome": "fontawesome#^4.6.3"
+  }
+}
