@@ -15,9 +15,9 @@ fi
 # We go into the repo where the app lives so we can run `npm install` in there.
 cd $OPENSHIFT_REPO_DIR
 
-NODE_VER=4.5.0
+NODE_VER=6.5.0
 
-NAVE="SHELL=/bin/bash HOME=$OPENSHIFT_DATA_DIR $NAVE_SCRIPT"
+NAVE="TEMP=$OPENSHIFT_TMP_DIR SHELL=/bin/bash HOME=$OPENSHIFT_DATA_DIR $NAVE_SCRIPT"
 # Use `nave` to make sure we use the right `node` and `npm` versions.
 # We set the `$HOME` environment variable to data dir as this is the only place
 # where we can write and `npm` will need to do so in home.
