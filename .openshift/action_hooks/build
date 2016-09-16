@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ${OPENSHIFT_REPO_DIR}/.openshift/nave
+
 cd ${OPENSHIFT_REPO_DIR}dev-resources/libs
 
 echo Downloading bower dependencies
