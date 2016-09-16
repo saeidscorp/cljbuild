@@ -1,7 +1,7 @@
 language: clojure
 
 before_install:
-  - npm install bower
+  - npm install -g bower
   - cd dev-resources/libs && bower install
 
 jdk:
