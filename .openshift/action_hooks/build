@@ -3,4 +3,5 @@
 cd ${OPENSHIFT_REPO_DIR}dev-resources/libs
 
 echo Downloading bower dependencies
+echo $NAVE <-- nave
 eval $NAVE use $NODE_VER ../../node_modules/.bin/bower install
