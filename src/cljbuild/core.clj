@@ -38,7 +38,6 @@
                                                "/semantic/dist/semantic.js"]})
     (assets/load-assets "libs/components"                   ;; 12
                         ["/font-awesome/fonts/fontawesome-webfont.ttf"
-                         "/semantic/dist/themes/default/assets/fonts/icons.ttf"
                          "/semantic/dist/themes/default/assets/images/flags.png"])))
 
 (selmer/set-resource-path! (jio/resource "public"))
