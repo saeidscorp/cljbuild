@@ -1,6 +1,11 @@
 language: clojure
 
 before_install:
+  - node -v
+  - npm cache clean -f
+  - npm install -g n
+  - n stable
+  - node -v
   - npm install -g bower
   - cd dev-resources/libs && bower install
   - cd components/semantic && npm install && gulp build
