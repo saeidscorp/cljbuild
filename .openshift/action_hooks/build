@@ -10,4 +10,4 @@ eval $WITH_NAVE ../../node_modules/.bin/bower install
 
 cd components/semantic
 eval $WITH_NAVE npm install
-eval $WITH_NAVE ../../node_modules/.bin/gulp build
+eval $WITH_NAVE ./node_modules/.bin/gulp build
