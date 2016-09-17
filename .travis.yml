@@ -1,11 +1,11 @@
 language: clojure
 
+env:
+  - TRAVIS_NODE_VERSION="6.5.0"
+
 before_install:
-  - node -v
-  - npm cache clean -f
-  - npm install -g n
-  - n stable
-  - node -v
+  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
+  - npm install && echo Node Version... && node -v
   - npm install -g bower
   - cd dev-resources/libs && bower install
   - cd components/semantic && npm install && gulp build
