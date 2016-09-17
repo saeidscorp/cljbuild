@@ -3,6 +3,7 @@ language: clojure
 before_install:
   - npm install -g bower
   - cd dev-resources/libs && bower install
+  - cd components/semantic && npm install
 
 jdk:
   - oraclejdk8

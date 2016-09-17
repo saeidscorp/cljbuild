@@ -9,7 +9,7 @@ source ${OPENSHIFT_REPO_DIR}/.openshift/nave
 # Use `nave` to make sure we use the right `node` and `npm` versions.
 # We set the `$HOME` environment variable to data dir as this is the only place
 # where we can write and `npm` will need to do so in home.
-eval $NAVE use $NODE_VER npm install bower
+eval $WITH_NAVE npm install bower
 
 echo Validating NodeJs Version:
-eval $NAVE use $NODE_VER node -v
+eval $WITH_NAVE node -v
