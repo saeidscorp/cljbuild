@@ -7,4 +7,7 @@ cd ${OPENSHIFT_REPO_DIR}dev-resources/libs
 echo Downloading bower dependencies
 
 eval $WITH_NAVE ../../node_modules/.bin/bower install
-eval $WITH_NAVE cd components/semantic && npm install && ../../node_modules/.bin/gulp build
+
+cd components/semantic
+eval $WITH_NAVE npm install
+eval $WITH_NAVE ../../node_modules/.bin/gulp build
