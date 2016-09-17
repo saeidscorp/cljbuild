@@ -28,7 +28,8 @@
     (assets/load-bundle "libs/components"                   ;; 6
                         "vendor-styles.css"                 ;; 7
                         ["/semantic/dist/semantic.css"      ;; 8
-                         "/font-awesome/css/font-awesome.css"]) ;; 9
+                         "/font-awesome/css/font-awesome.css"
+                         "/lato-font/css/lato-font.css"]) ;; 9
     (assets/load-bundle "public"
                         "app-styles.css"
                         ["/styles/app.css"])

@@ -3,7 +3,7 @@ language: clojure
 before_install:
   - npm install -g bower
   - cd dev-resources/libs && bower install
-  - cd components/semantic && npm install
+  - cd components/semantic && npm install && gulp build
 
 jdk:
   - oraclejdk8
@@ -11,3 +11,4 @@ jdk:
 cache:
   directories:
     - "$HOME/.m2"
+    - "dev-resources/libs/components"
