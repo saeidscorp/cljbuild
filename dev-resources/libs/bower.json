@@ -19,6 +19,7 @@
     "jquery": "^3.1.0",
     "semantic": "saeidscorp/semantic-ui#patched",
     "font-awesome": "fontawesome#^4.6.3",
-    "lato-font": "^1.1.1"
+    "lato-font": "^1.1.1",
+    "editor.md": "^1.5.0"
   }
 }

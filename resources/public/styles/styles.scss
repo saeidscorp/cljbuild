@@ -1,0 +1,18 @@
+.page-main {
+    padding: 50px 0;
+    height: 100%;
+
+    background: url(/images/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    .inner-grid {
+        height: 100%;
+    }
+}
+
+.rounded {
+    overflow: hidden;
+}
