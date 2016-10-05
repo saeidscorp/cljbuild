@@ -1,0 +1,12 @@
+[#component ["jquery" :js ["/components/jquery/dist/jquery.min.js"]]
+ #component ["semantic"
+             #component "jquery"
+             :js ["/components/semantic/dist/semantic.min.js"]
+             :css ["/components/semantic/dist/semantic.min.css"]]
+ #bundle {"fonts.css"
+          ["/components/font-awesome/css/font-awesome.min.css"
+           "/components/lato-font/css/lato-font.min.css"]}
+ #component ["main"
+             #component "jquery"
+             #component "semantic"
+             :css [#bundle "fonts.css"]]]

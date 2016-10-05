@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Test</title>
 
-    {% assets vendor-styles.css %}
+
+    {% component css main %}
     {% assets app-styles.css %}
 </head>
 <body>
@@ -44,7 +45,7 @@
 </div>
 
 
-{% assets vendor-scripts.js %}
+{% component js main %}
 
 </body>
 </html>

@@ -5,6 +5,7 @@
             [ring.middleware.content-type]
             [ring.middleware.not-modified]
             [selmer.parser :as selmer]
+            [bundle-reader.core :as br]
 
             [clojure.java.io :as jio]
 
@@ -16,6 +17,14 @@
             [optimus-sass.core])
   (:gen-class))
 
+(selmer/remove-tag! :component)
+
+(selmer/add-tag! :component
+                 (fn [[type component-name] context-map]
+                   (case type
+                     "css" (html/link-to-css-bundles (:request context-map) [(br/component-handle component-name :css)])
+                     "js" (html/link-to-js-bundles (:request context-map) [(br/component-handle component-name :js)]))))
+
 (selmer/add-tag! :assets
                  (fn [[bundle-name] context-map]
                    (cond (.endsWith ^String bundle-name ".css")
@@ -25,27 +34,32 @@
                          (html/link-to-js-bundles (:request context-map) [bundle-name]))))
 
 (defn get-assets []                                         ;; 4
-  (concat                                                   ;; 5
-    (assets/load-bundle "libs/components"                   ;; 6
-                        "vendor-styles.css"                 ;; 7
-                        ["/semantic/dist/semantic.min.css"      ;; 8
-                         "/font-awesome/css/font-awesome.min.css"
-                         "/lato-font/css/lato-font.min.css"]) ;; 9
-    (assets/load-bundle "public"
-                        "app-styles.css"
-                        ["/styles/app.css"
-                         "/styles/styles.scss"])
-    (assets/load-bundles "libs/components"                  ;; 10
-                         {"vendor-scripts.js" ["/jquery/dist/jquery.min.js"
-                                               "/semantic/dist/semantic.min.js"]})
-    (assets/load-assets "public"                   ;; 12
-                        [#"/images/.+\.jpg$"])))
+  (let [[bundles resources] (br/get-assets-from-resources "public/"
+                                                          ["app-styles.css"]
+                                                          [])
+        [vendor-bundles vendor-resources] (br/get-assets-from-resources "libs/"
+                                                                        []
+                                                                        ["main"])]
+    (concat (apply assets/load-bundles bundles)
+            (apply assets/load-assets resources) ;; 5
+            (apply assets/load-bundles vendor-bundles)
+            (apply assets/load-assets vendor-resources)
+            #_(assets/load-bundle "libs/components"         ;; 6
+                                  "vendor-styles.css"       ;; 7
+                                  ["/semantic/dist/semantic.min.css" ;; 8
+                                   "/font-awesome/css/font-awesome.min.css"
+                                   "/lato-font/css/lato-font.min.css"]) ;; 9
+            #_(assets/load-bundles "libs/components"        ;; 10
+                                   {"vendor-scripts.js" ["/jquery/dist/jquery.min.js"
+                                                         "/semantic/dist/semantic.min.js"]}))))
 
 (selmer/set-resource-path! (jio/resource "public"))
 
 (defn make-handler [profile]
   (-> (fn [req] (response/content-type (response/response
-                                         (selmer/render-file "main.html" {:request req
+                                         (selmer/render-file "main.html" {:request      req
+                                                                          :scripts      (optimus.html/link-to-js-bundles req (br/component-handle "main" :js))
+                                                                          :stylesheets  (optimus.html/link-to-css-bundles req (br/component-handle "main" :css))
                                                                           :avatar-image (optimus.link/file-path req "/images/steve.jpg")})) "text/html"))
       (optimus/wrap get-assets
                     (if (= :dev profile)                    ;; 16

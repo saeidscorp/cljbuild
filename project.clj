@@ -10,6 +10,7 @@
                  [org.clojars.saeidscorp/optimus "0.19.0-SNAPSHOT"]
                  [org.clojars.saeidscorp/optimus-img-transform "0.2.0-SNAPSHOT"]
                  [org.clojars.saeidscorp/optimus-sass "0.1.0-SNAPSHOT"]
+                 [one.scorp/bundle-reader "0.1.0-SNAPSHOT"]
                  [selmer "1.0.7"]]
   ;:bower-dependencies [[jquery "^3.1.0"]]
   ;:bower {:directory "dev-resources/libs/components"}

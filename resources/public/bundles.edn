@@ -1,0 +1,5 @@
+[#bundle {"app-styles.css"
+          ["/styles/app.css"
+           "/styles/styles.scss"]}
+ #resources [#x"/images/.+\\.jpg$"]
+ ]
